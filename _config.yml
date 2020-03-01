@@ -7,7 +7,7 @@ title: Hexo
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: Hamomo
 language: en
 timezone: ''
 
@@ -101,4 +101,4 @@ deploy:
   type: git
   repo: https://github.com/hamono/hamomo.blog/
   branch: gh-pages
-  message: kol
+  message: k
