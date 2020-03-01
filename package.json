@@ -10,7 +10,7 @@
     "predeploy": "yarn build",
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "gh-pages -d public",
+    "deploy": "gh-pages -u public",
     "server": "hexo server"
   },
   "homepage": "https://hamono.github.io/hamomo.blog/",
