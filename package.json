@@ -7,15 +7,15 @@
     "url": "https://github.com/hamono/bilibili_text.git"
   },
   "scripts": {
-    "predeploy": "hexo deploy",
+    "predeploy": "yarn build",
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "gh-pages -d hexo deploy",
+    "deploy": "gh-pages -d public",
     "server": "hexo server"
   },
   "homepage": "https://hamono.github.io/hamomo.blog/",
   "hexo": {
-    "version": ""
+    "version": "4.2.0"
   },
   "dependencies": {
     "hexo": "^4.0.0",
