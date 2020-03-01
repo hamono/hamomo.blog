@@ -1,13 +1,19 @@
 {
-  "name": "hexo-site",
+  "name": "hamomo.blog",
   "version": "0.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hamono/bilibili_text.git"
+  },
   "scripts": {
+    "predeploy": "hexo deploy",
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "deploy": "gh-pages -d hexo deploy",
     "server": "hexo server"
   },
+  "homepage": "https://hamono.github.io/hamomo.blog/",
   "hexo": {
     "version": ""
   },
