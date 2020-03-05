@@ -16,7 +16,7 @@
 <meta property="og:description" content="fetch 相关 APIfetch()fetch 请求 fetch(&amp;apos;http:&#x2F;&#x2F;example.com&#x2F;movies.json&amp;apos;) .then(function(response) {   return response.json(); }) .then(function(myJson) {   console.log(myJson); });他可以接受两个参数，可以为一个">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-01T16:52:28.312Z">
-<meta property="article:modified_time" content="2020-03-02T00:43:14.972Z">
+<meta property="article:modified_time" content="2020-03-05T03:13:50.171Z">
 <meta property="article:author" content="Hamomo">
 <meta name="twitter:card" content="summary">
   
@@ -212,6 +212,34 @@ fetch(url, {
 <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code>[return_value] = await expression;</code></pre><p>expression：一个 Promise 对象或者任何要等待的值。<br>return_value：返回 Promise 对象的处理结果。如果等待的不是 Promise 对象，则返回该值本身。</p>
 <h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>await 表达式会暂停当前异步函数的执行，等待 Promise 处理完成。若 Promise 正常处理(fulfilled)，其回调的resolve函数参数作为 await 表达式的值，继续执行异步函数。</p>
 <p>若 Promise 处理异常(rejected)，await 表达式会把 Promise 的异常原因抛出。</p>
+<h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><p>看段代码：<br>    function read() {<br>      console.log(‘小明认真读书’);<br>    }</p>
+<pre><code>function eat() {
+  return new Promise((resolve, reject) =&gt; {
+    console.log(&apos;好嘞，吃饭咯&apos;);
+    setTimeout(() =&gt; {
+      resolve(&apos;饭吃饱啦&apos;);
+    }, 1000)
+  })
+}
+
+const cooking = new Promise((resolve, reject) =&gt; {
+  console.log(&apos;妈妈认真做饭&apos;);
+  setTimeout(() =&gt; {
+    resolve(&apos;小明快过来，开饭啦&apos;);
+  }, 3000);
+})
+
+cooking.then(msg =&gt; {
+  console.log(msg);
+  return eat();
+})
+read();</code></pre><p>执行顺序：</p>
+<p>妈妈认真做饭</p>
+<p>小明认真读书</p>
+<p>小明快过来，开饭了</p>
+<p>好嘞，吃饭了</p>
+<p>饭吃饱啦</p>
+<p>promise的优点：将执行代码与处理数据的代码清晰的分离，在执行若干个异步函数时，将非常有用</p>
 
       
 
