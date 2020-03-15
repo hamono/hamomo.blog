@@ -152,6 +152,249 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webpack中的loader和plugin" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/">webpack中的loader和plugin</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/" class="archive-article-date">
+  	<time datetime="2020-03-15T00:40:33.485Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h1><p>webpack 默认只识别 js 结尾的文件，当遇到其他格式后，webpack 并不知道如何去处理。此时，我们需要定义一种规则，告诉 webpack，当遇到其他类型的问件时，去求助于相应的 loader。</p>
+<ul>
+<li>识别出应该被对应的 loader 进行转换的文件。（test 属性）</li>
+<li>转换这些文件，使其能够被添加到依赖图中。（use 属性）</li>
+</ul>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><ul>
+<li>test：匹配处理文件的拓展名的表达式，必须</li>
+<li>user：使用的 loader 模块名称，必须</li>
+<li>include/exclude：手动添加必须处理的文件（夹）或屏蔽不需要处理的文件，可选</li>
+<li>query：为 loader 提供额外的设置选项，可选</li>
+</ul>
+<h1 id="plugin"><a href="#plugin" class="headerlink" title="plugin"></a>plugin</h1><p>loader 被用于转换某些类型的模块，而插件则可以用于执行广泛的任务。想要使用一个插件，你只需要 require()它，然后将它添加到 plugins 数组中。多数插件可以通过选项自定义。你也可以在一个配置中因为不同目的而多次使用同一个插件，这时需要通过使用 new 操作符来创建它的一个实例。</p>
+<h2 id="用法-1"><a href="#用法-1" class="headerlink" title="用法"></a>用法</h2><pre><code>plugins:[执行的插件]</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-task" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/task/">task</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/05/task/" class="archive-article-date">
+  	<time datetime="2020-03-05T09:48:01.382Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 1440px;
+      margin: 0 auto;
+      height: 5000px;
+      background-color: aqua;
+    }
+  </style>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div class="box">
+    start
+  </div>
+  <div class="main">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</body>
+</html>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/05/task/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-text" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/text/">text</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/05/text/" class="archive-article-date">
+  	<time datetime="2020-03-05T07:42:34.827Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <p>请输入半径</p>
+  <input type="text" onchange="input()">
+  <button>确认</button>
+</body>
+<script>
+  function input(){
+    const inputs=document.querySelector('input');
+    const p=document.querySelector('p');
+    p.textContent=inputs.value*inputs.value*3.14;
+  }
+</script>
+</html>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/05/text/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-React异步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
