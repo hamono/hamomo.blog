@@ -152,6 +152,499 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webpack中的loader和plugin" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/">webpack中的loader和plugin</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/" class="archive-article-date">
+  	<time datetime="2020-03-15T00:40:33.485Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h1><p>webpack 默认只识别 js 结尾的文件，当遇到其他格式后，webpack 并不知道如何去处理。此时，我们需要定义一种规则，告诉 webpack，当遇到其他类型的问件时，去求助于相应的 loader。</p>
+<ul>
+<li>识别出应该被对应的 loader 进行转换的文件。（test 属性）</li>
+<li>转换这些文件，使其能够被添加到依赖图中。（use 属性）</li>
+</ul>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><ul>
+<li>test：匹配处理文件的拓展名的表达式，必须</li>
+<li>user：使用的 loader 模块名称，必须</li>
+<li>include/exclude：手动添加必须处理的文件（夹）或屏蔽不需要处理的文件，可选</li>
+<li>query：为 loader 提供额外的设置选项，可选</li>
+</ul>
+<h1 id="plugin"><a href="#plugin" class="headerlink" title="plugin"></a>plugin</h1><p>loader 被用于转换某些类型的模块，而插件则可以用于执行广泛的任务。想要使用一个插件，你只需要 require()它，然后将它添加到 plugins 数组中。多数插件可以通过选项自定义。你也可以在一个配置中因为不同目的而多次使用同一个插件，这时需要通过使用 new 操作符来创建它的一个实例。</p>
+<h2 id="用法-1"><a href="#用法-1" class="headerlink" title="用法"></a>用法</h2><pre><code>plugins:[执行的插件]</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-task" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/task/">task</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/05/task/" class="archive-article-date">
+  	<time datetime="2020-03-05T09:48:01.382Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 1440px;
+      margin: 0 auto;
+      height: 5000px;
+      background-color: aqua;
+    }
+  </style>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div class="box">
+    start
+  </div>
+  <div class="main">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</body>
+</html>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/05/task/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-text" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/text/">text</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/05/text/" class="archive-article-date">
+  	<time datetime="2020-03-05T07:42:34.827Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <p>请输入半径</p>
+  <input type="text" onchange="input()">
+  <button>确认</button>
+</body>
+<script>
+  function input(){
+    const inputs=document.querySelector('input');
+    const p=document.querySelector('p');
+    p.textContent=inputs.value*inputs.value*3.14;
+  }
+</script>
+</html>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/05/text/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-React异步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/03/React%E5%BC%82%E6%AD%A5/">React异步</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/03/React%E5%BC%82%E6%AD%A5/" class="archive-article-date">
+  	<time datetime="2020-03-02T16:45:30.081Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="setState的异步调用"><a href="#setState的异步调用" class="headerlink" title="setState的异步调用"></a>setState的异步调用</h1><p><code>setState</code>是异步的，在class式的组件中，<code>this.state</code>表示当前渲染的值，在hook中<code>state</code>是同样的效果。</p>
+<p>所以<code>this.setState</code>或者<code>setState</code>到底什么时候才会重新渲染呢？</p>
+<p><code>setState</code> 函数用于更新 <code>state</code>。它接收一个新的 <code>state</code> 值并将组件的一次重新渲染加入队列。在后续的重新渲染中，useState 返回的第一个值将始终是更新后最新的 <code>state</code>。（这段话来自hook文档）</p>
+<p>那么，“加入队列”怎么理解，“后续的重新渲染”又是什么时候呢？</p>
+<p>先看一段代码：</p>
+<pre><code>const [count, setCount] = React.useState(0);
+return &lt;div&gt;
+  &lt;p&gt;You clicked {count} times&lt;/p&gt;
+  &lt;button onClick={() =&gt; setCount(count + 1)}&gt;click&lt;/button&gt;
+  &lt;/div&gt;</code></pre><p>显而易见，打印的<code>count</code>的每次click都会加1，那么问题又来了，具体完成重新渲染是哪呢：是<code>onclick</code>函数执行完重新渲染呢，还是<code>setCount</code>执行完重新渲染呢？</p>
+<p>观察下面的代码</p>
+<pre><code>const [count, setCount] = React.useState(0);
+function handleValue(){
+  setCount(count+1)
+  setCount(count+1)
+}
+return &lt;div&gt;
+  &lt;p&gt;You clicked {count} times&lt;/p&gt;
+  &lt;button onClick={handleValue}&gt;click&lt;/button&gt;
+&lt;/div&gt;</code></pre><p>让我们猜一猜点击按钮一次，<code>count</code>的值是多少呢？</p>
+<p>是1呢还是2呢？当然是1，所以setState并不会立刻rerender，正如上文所说，加入到了一个等待rerender的队列，按照上面的测试结果，我们是不是可以这样说：同一个函数内部的相同的setState只会执行一次，而它重新渲染是在其所在函数结束时。</p>
+<p>真相真的是这样吗？</p>
+<pre><code>const [count, setCount] = React.useState(0);
+  function handleValue(){
+    setCount((state)=&gt;state+1)
+    setCount((state)=&gt;state+1)
+  }
+  return &lt;div&gt;
+    &lt;p&gt;You clicked {count} times&lt;/p&gt;
+    &lt;button onClick={handleValue}&gt;click&lt;/button&gt;
+  &lt;/div&gt;</code></pre><p>那么这个点击一次的结果又是什么呢？</p>
+<p>很明显这次不是1了，<code>count</code>是2了，这又是为什么呢？</p>
+<p>首先要搞清参数<code>state</code>是什么</p>
+<p>官方说法：<code>state</code> 是对应用变化时组件状态的引用。</p>
+<p>通俗的说就是当前的<code>state</code>的值(<code>this.state</code>),也就是代码示例中的count值，因为count是不允许随意修改的，只能通过与其匹配的setCount传递值，所以这里使用了参数，所以这是一个很实惠(代码数量增加不多，解决的问题很关键)的消除异步的方法。(其实官方这样设计这个方法的时候目的是为了性能着想)</p>
+<p>但是，关键的setState并不是总是异步的，只有在事件处理函数内部是才是异步的。</p>
+<p>下面还有一段有趣的代码：</p>
+<pre><code>const list=[1,1,1,1,1,1];
+const [count, setCount] = React.useState([]);
+function handleValue(){
+  list.map((v:number)=&gt;{
+    setCount([...count,v])
+  })
+}
+return &lt;div&gt;
+  &lt;p&gt; {count} &lt;/p&gt;
+  &lt;button onClick={handleValue}&gt;click&lt;/button&gt;
+&lt;/div&gt;</code></pre><p>setState的队列属性使得这种方法无法实现应有的效果，所以，我们修改：</p>
+<pre><code>const list=[1,1,1,1,1,1];
+const [count, setCount] = React.useState([]);
+function handleValue(){
+  list.map((v:number)=&gt;{
+    setCount((state)=&gt;[...state,v])
+  })
+}
+return &lt;div&gt;
+  &lt;p&gt; {count} &lt;/p&gt;
+  &lt;button onClick={handleValue}&gt;click&lt;/button&gt;
+&lt;/div&gt;</code></pre><p>如此，这个问题便解决了</p>
+<p>这个是之前项目中出现的问题，解决了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/03/React%E5%BC%82%E6%AD%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-fetch相关api及异步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/02/fetch%E7%9B%B8%E5%85%B3api%E5%8F%8A%E5%BC%82%E6%AD%A5/">fetch相关api及异步</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/02/fetch%E7%9B%B8%E5%85%B3api%E5%8F%8A%E5%BC%82%E6%AD%A5/" class="archive-article-date">
+  	<time datetime="2020-03-01T16:52:28.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="fetch-相关-API"><a href="#fetch-相关-API" class="headerlink" title="fetch 相关 API"></a>fetch 相关 API</h1><h2 id="fetch"><a href="#fetch" class="headerlink" title="fetch()"></a>fetch()</h2><p>fetch 请求</p>
+<pre><code>fetch(&apos;http://example.com/movies.json&apos;)
+.then(function(response) {
+  return response.json();
+})
+.then(function(myJson) {
+  console.log(myJson);
+});</code></pre><p>他可以接受两个参数，可以为一个请求的基本信息，如下：</p>
+<pre><code>function postData(url, data) {
+  return fetch(url, {
+    body: JSON.stringify(data), // must match &apos;Content-Type&apos; header
+    cache: &apos;no-cache&apos;, // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: &apos;same-origin&apos;, // include, same-origin, *omit
+    headers: {
+      &apos;user-agent&apos;: &apos;Mozilla/4.0 MDN Example&apos;,
+      &apos;content-type&apos;: &apos;application/json&apos;
+    },
+    method: &apos;POST&apos;, // *GET, POST, PUT, DELETE, etc.
+    mode: &apos;cors&apos;, // no-cors, cors, *same-origin
+    redirect: &apos;follow&apos;, // manual, *follow, error
+    referrer: &apos;no-referrer&apos;, // *client, no-referrer
+  })
+  .then(response =&gt; response.json()) // parses response to JSON
+}</code></pre><h2 id="上传-json-数据实例"><a href="#上传-json-数据实例" class="headerlink" title="上传 json 数据实例"></a>上传 json 数据实例</h2><pre><code>let url = &apos;https://example.com/profile&apos;;
+let data = {username: &apos;example&apos;};
+
+fetch(url, {
+  method: &apos;POST&apos;, // or &apos;PUT&apos;
+  body: JSON.stringify(data), // data can be `string` or {object}!
+  headers: new Headers({
+    &apos;Content-Type&apos;: &apos;application/json&apos;
+  })
+}).then(res =&gt; res.json())
+.catch(error =&gt; console.error(&apos;Error:&apos;, error))
+.then(response =&gt; console.log(&apos;Success:&apos;, response));</code></pre><h2 id="await"><a href="#await" class="headerlink" title="await"></a>await</h2><p>等待一个<code>promise</code>对象，只能在异步函数中使用。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code>[return_value] = await expression;</code></pre><p>expression：一个 Promise 对象或者任何要等待的值。<br>return_value：返回 Promise 对象的处理结果。如果等待的不是 Promise 对象，则返回该值本身。</p>
+<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>await 表达式会暂停当前异步函数的执行，等待 Promise 处理完成。若 Promise 正常处理(fulfilled)，其回调的resolve函数参数作为 await 表达式的值，继续执行异步函数。</p>
+<p>若 Promise 处理异常(rejected)，await 表达式会把 Promise 的异常原因抛出。</p>
+<h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><p>看段代码：<br>    function read() {<br>      console.log(‘小明认真读书’);<br>    }</p>
+<pre><code>function eat() {
+  return new Promise((resolve, reject) =&gt; {
+    console.log(&apos;好嘞，吃饭咯&apos;);
+    setTimeout(() =&gt; {
+      resolve(&apos;饭吃饱啦&apos;);
+    }, 1000)
+  })
+}
+
+const cooking = new Promise((resolve, reject) =&gt; {
+  console.log(&apos;妈妈认真做饭&apos;);
+  setTimeout(() =&gt; {
+    resolve(&apos;小明快过来，开饭啦&apos;);
+  }, 3000);
+})
+
+cooking.then(msg =&gt; {
+  console.log(msg);
+  return eat();
+})
+read();</code></pre><p>执行顺序：</p>
+<p>妈妈认真做饭</p>
+<p>小明认真读书</p>
+<p>小明快过来，开饭了</p>
+<p>好嘞，吃饭了</p>
+<p>饭吃饱啦</p>
+<p>promise的优点：将执行代码与处理数据的代码清晰的分离，在执行若干个异步函数时，将非常有用</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/02/fetch%E7%9B%B8%E5%85%B3api%E5%8F%8A%E5%BC%82%E6%AD%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-http常见header" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

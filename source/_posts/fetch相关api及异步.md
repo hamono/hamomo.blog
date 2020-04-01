@@ -62,3 +62,46 @@ return_value：返回 Promise 对象的处理结果。如果等待的不是 Prom
 await 表达式会暂停当前异步函数的执行，等待 Promise 处理完成。若 Promise 正常处理(fulfilled)，其回调的resolve函数参数作为 await 表达式的值，继续执行异步函数。
 
 若 Promise 处理异常(rejected)，await 表达式会把 Promise 的异常原因抛出。
+
+## promise
+
+看段代码：
+    function read() {
+      console.log('小明认真读书');
+    }
+
+    function eat() {
+      return new Promise((resolve, reject) => {
+        console.log('好嘞，吃饭咯');
+        setTimeout(() => {
+          resolve('饭吃饱啦');
+        }, 1000)
+      })
+    }
+
+    const cooking = new Promise((resolve, reject) => {
+      console.log('妈妈认真做饭');
+      setTimeout(() => {
+        resolve('小明快过来，开饭啦');
+      }, 3000);
+    })
+
+    cooking.then(msg => {
+      console.log(msg);
+      return eat();
+    })
+    read();
+
+执行顺序：
+
+妈妈认真做饭
+
+小明认真读书
+
+小明快过来，开饭了
+
+好嘞，吃饭了
+
+饭吃饱啦
+
+promise的优点：将执行代码与处理数据的代码清晰的分离，在执行若干个异步函数时，将非常有用

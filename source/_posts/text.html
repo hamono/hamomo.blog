@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <p>请输入半径</p>
+  <input type="text" onchange="input()">
+  <button>确认</button>
+</body>
+<script>
+  function input(){
+    const inputs=document.querySelector('input');
+    const p=document.querySelector('p');
+    p.textContent=inputs.value*inputs.value*3.14;
+  }
+</script>
+</html>

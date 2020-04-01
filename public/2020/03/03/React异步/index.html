@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>React异步 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="setState的异步调用setState是异步的，在class式的组件中，this.state表示当前渲染的值，在hook中state是同样的效果。 所以this.setState或者setState到底什么时候才会重新渲染呢？ setState 函数用于更新 state。它接收一个新的 state 值并将组件的一次重新渲染加入队列。在后续的重新渲染中，useState 返回的第一个值将始终是更">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React异步">
+<meta property="og:url" content="http://yoursite.com/2020/03/03/React%E5%BC%82%E6%AD%A5/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="setState的异步调用setState是异步的，在class式的组件中，this.state表示当前渲染的值，在hook中state是同样的效果。 所以this.setState或者setState到底什么时候才会重新渲染呢？ setState 函数用于更新 state。它接收一个新的 state 值并将组件的一次重新渲染加入队列。在后续的重新渲染中，useState 返回的第一个值将始终是更">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-02T16:45:30.081Z">
+<meta property="article:modified_time" content="2020-03-03T12:47:47.495Z">
 <meta property="article:author" content="Hamomo">
 <meta name="twitter:card" content="summary">
   
@@ -150,238 +154,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-React异步" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/" class="archive-article-date">
-  	<time datetime="2020-03-15T00:40:33.485Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/">webpack中的loader和plugin</a>
+    <h1 class="article-title" itemprop="name">
+      React异步
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/05/task/" class="archive-article-date">
-  	<time datetime="2020-03-05T09:48:01.382Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/task/">task</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/05/text/" class="archive-article-date">
-  	<time datetime="2020-03-05T07:42:34.827Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/text/">text</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/03/React%E5%BC%82%E6%AD%A5/" class="archive-article-date">
+        
+        <a href="/2020/03/03/React%E5%BC%82%E6%AD%A5/" class="archive-article-date">
   	<time datetime="2020-03-02T16:45:30.081Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/03/React%E5%BC%82%E6%AD%A5/">React异步</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="setState的异步调用"><a href="#setState的异步调用" class="headerlink" title="setState的异步调用"></a>setState的异步调用</h1><p><code>setState</code>是异步的，在class式的组件中，<code>this.state</code>表示当前渲染的值，在hook中<code>state</code>是同样的效果。</p>
+<p>所以<code>this.setState</code>或者<code>setState</code>到底什么时候才会重新渲染呢？</p>
+<p><code>setState</code> 函数用于更新 <code>state</code>。它接收一个新的 <code>state</code> 值并将组件的一次重新渲染加入队列。在后续的重新渲染中，useState 返回的第一个值将始终是更新后最新的 <code>state</code>。（这段话来自hook文档）</p>
+<p>那么，“加入队列”怎么理解，“后续的重新渲染”又是什么时候呢？</p>
+<p>先看一段代码：</p>
+<pre><code>const [count, setCount] = React.useState(0);
+return &lt;div&gt;
+  &lt;p&gt;You clicked {count} times&lt;/p&gt;
+  &lt;button onClick={() =&gt; setCount(count + 1)}&gt;click&lt;/button&gt;
+  &lt;/div&gt;</code></pre><p>显而易见，打印的<code>count</code>的每次click都会加1，那么问题又来了，具体完成重新渲染是哪呢：是<code>onclick</code>函数执行完重新渲染呢，还是<code>setCount</code>执行完重新渲染呢？</p>
+<p>观察下面的代码</p>
+<pre><code>const [count, setCount] = React.useState(0);
+function handleValue(){
+  setCount(count+1)
+  setCount(count+1)
+}
+return &lt;div&gt;
+  &lt;p&gt;You clicked {count} times&lt;/p&gt;
+  &lt;button onClick={handleValue}&gt;click&lt;/button&gt;
+&lt;/div&gt;</code></pre><p>让我们猜一猜点击按钮一次，<code>count</code>的值是多少呢？</p>
+<p>是1呢还是2呢？当然是1，所以setState并不会立刻rerender，正如上文所说，加入到了一个等待rerender的队列，按照上面的测试结果，我们是不是可以这样说：同一个函数内部的相同的setState只会执行一次，而它重新渲染是在其所在函数结束时。</p>
+<p>真相真的是这样吗？</p>
+<pre><code>const [count, setCount] = React.useState(0);
+  function handleValue(){
+    setCount((state)=&gt;state+1)
+    setCount((state)=&gt;state+1)
+  }
+  return &lt;div&gt;
+    &lt;p&gt;You clicked {count} times&lt;/p&gt;
+    &lt;button onClick={handleValue}&gt;click&lt;/button&gt;
+  &lt;/div&gt;</code></pre><p>那么这个点击一次的结果又是什么呢？</p>
+<p>很明显这次不是1了，<code>count</code>是2了，这又是为什么呢？</p>
+<p>首先要搞清参数<code>state</code>是什么</p>
+<p>官方说法：<code>state</code> 是对应用变化时组件状态的引用。</p>
+<p>通俗的说就是当前的<code>state</code>的值(<code>this.state</code>),也就是代码示例中的count值，因为count是不允许随意修改的，只能通过与其匹配的setCount传递值，所以这里使用了参数，所以这是一个很实惠(代码数量增加不多，解决的问题很关键)的消除异步的方法。(其实官方这样设计这个方法的时候目的是为了性能着想)</p>
+<p>但是，关键的setState并不是总是异步的，只有在事件处理函数内部是才是异步的。</p>
+<p>下面还有一段有趣的代码：</p>
+<pre><code>const list=[1,1,1,1,1,1];
+const [count, setCount] = React.useState([]);
+function handleValue(){
+  list.map((v:number)=&gt;{
+    setCount([...count,v])
+  })
+}
+return &lt;div&gt;
+  &lt;p&gt; {count} &lt;/p&gt;
+  &lt;button onClick={handleValue}&gt;click&lt;/button&gt;
+&lt;/div&gt;</code></pre><p>setState的队列属性使得这种方法无法实现应有的效果，所以，我们修改：</p>
+<pre><code>const list=[1,1,1,1,1,1];
+const [count, setCount] = React.useState([]);
+function handleValue(){
+  list.map((v:number)=&gt;{
+    setCount((state)=&gt;[...state,v])
+  })
+}
+return &lt;div&gt;
+  &lt;p&gt; {count} &lt;/p&gt;
+  &lt;button onClick={handleValue}&gt;click&lt;/button&gt;
+&lt;/div&gt;</code></pre><p>如此，这个问题便解决了</p>
+<p>这个是之前项目中出现的问题，解决了</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/03/React%E5%BC%82%E6%AD%A5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/02/fetch%E7%9B%B8%E5%85%B3api%E5%8F%8A%E5%BC%82%E6%AD%A5/" class="archive-article-date">
-  	<time datetime="2020-03-01T16:52:28.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/03/05/text/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          text
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/02/fetch%E7%9B%B8%E5%85%B3api%E5%8F%8A%E5%BC%82%E6%AD%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">fetch相关api及异步</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/fetch%E7%9B%B8%E5%85%B3api%E5%8F%8A%E5%BC%82%E6%AD%A5/">fetch相关api及异步</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/01/http%E5%B8%B8%E8%A7%81header/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:35:09.863Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/01/http%E5%B8%B8%E8%A7%81header/">http常见header</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/01/http%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:35:09.852Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/01/http%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/">http原理及请求组成</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/01/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-29T19:06:30.594Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -404,8 +394,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
