@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/3 | Hexo</title>
+  <title>this是指向哪的 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/03/index.html">
+  <meta name="description" content="this 的指向总的来说，指向离他最近的function关键字所属的对象。 一般绑定this的方法有以下几种：  箭头函数 关键字new 显式绑定 隐式绑定 默认绑定  以上按照优先级从高到低排列。 箭头函数function Person(){   this.age &#x3D; 0;   setTimeout(function () {     console.log(this.age);     &#x2F;&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="this是指向哪的">
+<meta property="og:url" content="http://yoursite.com/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="this 的指向总的来说，指向离他最近的function关键字所属的对象。 一般绑定this的方法有以下几种：  箭头函数 关键字new 显式绑定 隐式绑定 默认绑定  以上按照优先级从高到低排列。 箭头函数function Person(){   this.age &#x3D; 0;   setTimeout(function () {     console.log(this.age);     &#x2F;&#x2F;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-28T08:44:15.825Z">
+<meta property="article:modified_time" content="2020-04-01T09:19:39.949Z">
 <meta property="article:author" content="Hamomo">
 <meta name="twitter:card" content="summary">
   
@@ -150,292 +154,208 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-this是指向哪的" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      this是指向哪的
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/" class="archive-article-date">
+
+        
+        <a href="/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/" class="archive-article-date">
   	<time datetime="2020-03-28T08:44:15.825Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/">this是指向哪的</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="this-的指向"><a href="#this-的指向" class="headerlink" title="this 的指向"></a>this 的指向</h1><p>总的来说，指向离他最近的function关键字所属的对象。</p>
+<p>一般绑定this的方法有以下几种：</p>
+<ol>
+<li>箭头函数</li>
+<li>关键字new</li>
+<li>显式绑定</li>
+<li>隐式绑定</li>
+<li>默认绑定</li>
+</ol>
+<p>以上按照优先级从高到低排列。</p>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><pre><code>function Person(){
+  this.age = 0;
+  setTimeout(function () {
+    console.log(this.age);     // 输出undefined
+  }, 1000);
+}
+var p = new Person();
 
-        <div class="article-info info-on-right">
-          
-          
+function Person(){
+  this.age = 10;
+  setTimeout(()=&gt; {
+    console.log(this.age);     // 输出10
+  }, 1000);
+}
+var p = new Person();</code></pre><p>在上述的箭头函数的例子中，setTimeout内部的函数是被global调用的，而global没有阿哥这个属性，输出undefined。</p>
+<p>第二个使用箭头函数，this会绑定在Person上；因为箭头函数不会绑定this，导致setTimeout函数内部的函数不会绑定到global上。</p>
+<h2 id="new关键字"><a href="#new关键字" class="headerlink" title="new关键字"></a>new关键字</h2><pre><code>function foo() { 
+    this.baz = &quot;baz&quot;; 
+    console.log(this.bar + &quot; &quot; + baz); 
+} 
+    var baz = new foo();
+var bar = &quot;bar&quot;; 
+var baz = new foo(); </code></pre><p>new关键字在函数的调用前，会创建一个新的对象实例，这个函数为实例的构造函数。</p>
+<p>按照前文提到的this绑定的方法，在这个例子中，离this最近的function是foo，此时foo属于baz，所以this指向的是baz对象，在baz上并没有bar，global上没有baz，所以输出undefined undefined。</p>
+<h2 id="显式绑定"><a href="#显式绑定" class="headerlink" title="显式绑定"></a>显式绑定</h2><pre><code>function foo() { 
+console.log(this.bar); 
+} 
+var bar = &quot;bar1&quot;; 
+var obj = {bar: &quot;bar2&quot;}; 
 
+foo();
+foo.call(obj);</code></pre><p>通过call显示绑定this</p>
+<h2 id="默认绑定和隐式绑定"><a href="#默认绑定和隐式绑定" class="headerlink" title="默认绑定和隐式绑定"></a>默认绑定和隐式绑定</h2><pre><code>function foo() { 
+    console.log(this.bar); 
+} 
+var bar = &quot;bar1&quot;; 
+var o2 = {bar: &quot;bar2&quot;, foo: foo}; 
+var o3 = {bar: &quot;bar3&quot;, foo: foo}; 
+foo();            // &quot;bar1&quot; – 默认绑定
+o2.foo();          // &quot;bar2&quot; – 隐式绑定
+o3.foo();          // &quot;bar3&quot; – 隐式绑定</code></pre><p>调用函数foo，foo的function所属的对象是window，所以foo的this.bar指window的bar。</p>
+<p>在o2和o3中，foo的function所属的对象分别是o2和o3，所以，this.bar分别指bar2和bar3。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总的来说，this的指向除非通过一些方法显示规定，否则都是指向离他最近的function关键字所属的对象。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/27/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/" class="archive-article-date">
-  	<time datetime="2020-03-27T12:59:15.473Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/27/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从输入URL到页面加载发生了什么</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/27/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/">从输入URL到页面加载发生了什么</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/" class="archive-article-date">
-  	<time datetime="2020-03-15T00:40:33.485Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/">webpack中的loader和plugin</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/05/task/" class="archive-article-date">
-  	<time datetime="2020-03-05T09:48:01.382Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/task/">task</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/05/text/" class="archive-article-date">
-  	<time datetime="2020-03-05T07:42:34.827Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/text/">text</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/03/React%E5%BC%82%E6%AD%A5/" class="archive-article-date">
-  	<time datetime="2020-03-02T16:45:30.081Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/03/React%E5%BC%82%E6%AD%A5/">React异步</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/02/fetch%E7%9B%B8%E5%85%B3api%E5%8F%8A%E5%BC%82%E6%AD%A5/" class="archive-article-date">
-  	<time datetime="2020-03-01T16:52:28.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/fetch%E7%9B%B8%E5%85%B3api%E5%8F%8A%E5%BC%82%E6%AD%A5/">fetch相关api及异步</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/01/http%E5%B8%B8%E8%A7%81header/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:35:09.863Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/01/http%E5%B8%B8%E8%A7%81header/">http常见header</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/01/http%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:35:09.852Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/01/http%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/">http原理及请求组成</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/01/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-29T19:06:30.594Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -458,8 +378,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
