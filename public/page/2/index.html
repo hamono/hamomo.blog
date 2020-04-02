@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hamomo blog</title>
+  <title>Hamomo blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hamomo blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Hamomo blog">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Hamomo">
@@ -152,292 +152,207 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-http原理及请求组成" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/01/http%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/">http原理及请求组成</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/01/http%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/" class="archive-article-date">
+  	<time datetime="2020-03-01T07:35:09.852Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+</a>
+        
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="http-原理及请求组成"><a href="#http-原理及请求组成" class="headerlink" title="http 原理及请求组成"></a>http 原理及请求组成</h1><h2 id="http-原理"><a href="#http-原理" class="headerlink" title="http 原理"></a>http 原理</h2><p>HTTP 协议工作于客户端-服务端架构上。浏览器作为 HTTP 客户端通过 URL 向 HTTP 服务端即 WEB 服务器发送所有请求。</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li>HTTP 是无连接的：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。</li>
+<li>HTTP 是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过 HTTP 发送。客户端以及服务器指定使用适合的 MIME-type 内容类型。</li>
+<li>HTTP 是无状态：HTTP 协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。</li>
+</ol>
+<h2 id="请求组成"><a href="#请求组成" class="headerlink" title="请求组成"></a>请求组成</h2><h3 id="起始行"><a href="#起始行" class="headerlink" title="起始行"></a>起始行</h3><p>包含三个元素：</p>
+<ul>
+<li>一个 HTTP 方法：<code>GET</code> <code>PUT</code> <code>POST</code> <code>OPTION</code> <code>HEAD</code>等；</li>
+<li>请求目标：通常是一个 URL，或者是协议、端口和域名的绝对路径；</li>
+<li>HTTP 版本</li>
+</ul>
+<h3 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h3><p>由不区分大小写的字符串，紧跟着的冒号 ‘:’ 和一个结构取决于 header 的值组成。 整个 header（包括值）由一行组成，这一行可以相当长。</p>
+<ul>
+<li>有许多请求header可用时，它们可以分为几组；</li>
+</ul>
+<h3 id="Body"><a href="#Body" class="headerlink" title="Body"></a>Body</h3><p>不是所有的请求都有一个 body：例如获取资源的请求，GET，HEAD，DELETE 和 OPTIONS，通常它们不需要 body。 有些请求将数据发送到服务器以便更新数据：常见的的情况是 POST 请求； 大致可以分为两类：</p>
+<ul>
+<li>Single-resource bodies：由一个单文件组成。该类型 body 由两个 header 定义： <code>Content-Type</code> 和 <code>Content-Length</code>.</li>
+<li>Multiple-resource bodies：由多部分 body 组成，每一部分包含不同的信息位。通常是和 <code>HTML Forms</code> 连系在一起</li>
+</ul>
+<h2 id="响应组成"><a href="#响应组成" class="headerlink" title="响应组成"></a>响应组成</h2><h3 id="状态行"><a href="#状态行" class="headerlink" title="状态行"></a>状态行</h3><p>相应的起始行。包含：</p>
+<ul>
+<li>协议版本</li>
+<li>状态码</li>
+<li>状态文本</li>
+</ul>
+<p>例：<code>HTTP/1.1 404 Not Found</code></p>
+<h3 id="Header-1"><a href="#Header-1" class="headerlink" title="Header"></a>Header</h3><p>与请求的 header 类似</p>
+<h3 id="Body-1"><a href="#Body-1" class="headerlink" title="Body"></a>Body</h3><p>与请求的 body 类似，可分为三类：</p>
+<ul>
+<li>Multiple-resource bodies，由多部分 body 组成，每一部分包含不同的信息位。通常是和 HTML Forms 连系在一起</li>
+<li>Single-resource bodies，由未知长度的单个文件组成，通过将 Transfer-Encoding 设置为 chunked 来使用 chunks 编码。</li>
+<li>Multiple-resource bodies，由多部分 body 组成，每部分包含不同的信息段。但这是比较少见的。</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="浏览器这样的客户端发出的消息叫做-requests，被服务端响应的消息叫-responses"><a href="#浏览器这样的客户端发出的消息叫做-requests，被服务端响应的消息叫-responses" class="headerlink" title="浏览器这样的客户端发出的消息叫做 requests，被服务端响应的消息叫 responses"></a>浏览器这样的客户端发出的消息叫做 requests，被服务端响应的消息叫 responses</h3><h3 id="HTTP-Cookie"><a href="#HTTP-Cookie" class="headerlink" title="HTTP Cookie"></a>HTTP Cookie</h3><ul>
+<li>HTTP Cookie（也叫 Web Cookie 或浏览器 Cookie）是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上。通常，它用于告知服务端两个请求是否来自同一浏览器，如保持用户的登录状态。Cookie 使基于无状态的 HTTP 协议记录稳定的状态信息成为了可能。</li>
+<li>主要用于会话状态管理、个性化设置、浏览器行为跟踪</li>
+</ul>
+<h3 id="一般的HTTP回话流程"><a href="#一般的HTTP回话流程" class="headerlink" title="一般的HTTP回话流程"></a>一般的HTTP回话流程</h3><ul>
+<li>建立连接<ul>
+<li>用户输入<code>URL</code>，客户端（浏览器）发起建立连接</li>
+<li><code>URL</code>会包含域名和端口，当端口为80（默认）时，可以省略</li>
+</ul>
+</li>
+<li>发送客户端请求<ul>
+<li>建立连接后，用户代理（一般为浏览器）即可发送请求</li>
+<li>请求分为三部分（<code>起始行</code> <code>header</code> <code>body</code>）</li>
+</ul>
+</li>
+<li>服务器响应结构<ul>
+<li>响应分为三部分（<code>起始行</code> <code>header</code> <code>body</code>）</li>
+</ul>
+</li>
+</ul>
+<h3 id="常见的响应状态码"><a href="#常见的响应状态码" class="headerlink" title="常见的响应状态码"></a>常见的响应状态码</h3><ul>
+<li><code>200</code> ；OK 请求成功</li>
+<li><code>301</code> ：Moved Permanently. 请求资源的 URI 已被改变</li>
+<li><code>404</code> : Not Found. 服务器无法找到请求的资源</li>
+<li><code>500</code> ：服务器内部错误</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/01/http%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/02/da/" class="archive-article-date">
-  	<time datetime="2020-04-02T10:54:53.561Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/02/da/">da</a>
+      <a class="article-title" href="/2020/03/01/hello-world/">Hello World</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="archive-article-date">
-  	<time datetime="2020-04-02T10:28:41.032Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
+        
+        <a href="/2020/03/01/hello-world/" class="archive-article-date">
+  	<time datetime="2020-02-29T19:06:30.594Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/">大数相加</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/01/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/" class="archive-article-date">
-  	<time datetime="2020-03-28T08:44:15.825Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/">this是指向哪的</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/27/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/" class="archive-article-date">
-  	<time datetime="2020-03-27T12:59:15.473Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/27/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/">从输入URL到页面加载发生了什么</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/" class="archive-article-date">
-  	<time datetime="2020-03-15T00:40:33.485Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/">webpack中的loader和plugin</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/05/task/" class="archive-article-date">
-  	<time datetime="2020-03-05T09:48:01.382Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/task/">task</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/05/text/" class="archive-article-date">
-  	<time datetime="2020-03-05T07:42:34.827Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/text/">text</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/03/React%E5%BC%82%E6%AD%A5/" class="archive-article-date">
-  	<time datetime="2020-03-02T16:45:30.081Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/03/React%E5%BC%82%E6%AD%A5/">React异步</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/02/fetch%E7%9B%B8%E5%85%B3api%E5%8F%8A%E5%BC%82%E6%AD%A5/" class="archive-article-date">
-  	<time datetime="2020-03-01T16:52:28.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/fetch%E7%9B%B8%E5%85%B3api%E5%8F%8A%E5%BC%82%E6%AD%A5/">fetch相关api及异步</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/01/http%E5%B8%B8%E8%A7%81header/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:35:09.863Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/01/http%E5%B8%B8%E8%A7%81header/">http常见header</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
-  
-
-    
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
   
 
@@ -461,9 +376,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
