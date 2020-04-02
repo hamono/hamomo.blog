@@ -152,6 +152,215 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-da" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/02/da/">da</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/02/da/" class="archive-article-date">
+  	<time datetime="2020-04-02T10:54:53.561Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <meta name="generator" content="Hexo 4.2.0"></head>
+  <body>
+    大数一：<input class="num1" /> 大数二：<input class="num2" />
+    <p>请输入两个大数测试</p>
+    <button class="but" onClick="add()">确定</button>
+    <script>
+      function sumString(a, b) {
+        //取两个数字的最大长度
+        let maxLength = Math.max(a.length, b.length);
+        //用0去补齐长度
+        a = a.padStart(maxLength, 0); //"0009007199254740991"
+        b = b.padStart(maxLength, 0); //"1234567899999999999"
+        //定义加法过程中需要用到的变量
+        let t = 0;
+        let f = 0; //"进位"
+        let sum = "";
+        for (let i = maxLength - 1; i >= 0; i--) {
+          t = parseInt(a[i]) + parseInt(b[i]) + f;
+          f = Math.floor(t / 10);
+          sum = (t % 10) + sum;
+        }
+        if (f == 1) {
+          sum = "1" + sum;
+        }
+        return sum;
+      }
+      function add() {
+        var num1 =document.querySelector(".num1");
+        console.log(typeof(num1))
+        console.log(num1.value)
+        var num2 = document.querySelector(".num2");
+        console.log(typeof(num2))
+        var but = document.querySelector("p");
+        but.textContent = sumString(num1.value, num2.value);
+
+      }
+    </script>
+  </body>
+</html>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/02/da/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-大数相加" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/">大数相加</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="archive-article-date">
+  	<time datetime="2020-04-02T10:28:41.032Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="javascript-实现两个大数的相加"><a href="#javascript-实现两个大数的相加" class="headerlink" title="javascript 实现两个大数的相加"></a>javascript 实现两个大数的相加</h1><h2 id="大数超出了-Javascript-的数值范围，用字符串表示"><a href="#大数超出了-Javascript-的数值范围，用字符串表示" class="headerlink" title="大数超出了 Javascript 的数值范围，用字符串表示"></a>大数超出了 Javascript 的数值范围，用字符串表示</h2><pre><code>function sumString(a, b) {
+  a = &apos;0&apos; + a;
+  b = &apos;0&apos; + b;  //加&apos;0&apos;首先是为了转为字符串，而且两个数相加后可能需要进位，这样保证了和的长度就是a、b中长的那个字符的长度
+  var arrA = a.split(&apos;&apos;),  //将字符串转为数组
+      arrB = b.split(&apos;&apos;),
+      res = [],  //相加结果组成的数组
+      temp = &apos;&apos;,  //相同位数相加的值
+      carry = 0,  //同位数相加结果大于等于10时为1，否则为0
+      distance = a.length - b.length,  //计算两个数字字符串的长度差
+      len = distance &gt; 0 ? a.length : b.length;  //和的长度
+  // 在长度小的那个值前加distance个0，保证两个数相加之前长度是想等的
+  if(distance &gt; 0) {
+    for(let i = 0; i &lt; distance; i++) {
+      arrB.unShift(&apos;0&apos;);
+    }
+  }else{
+    for(let i = 0; i &lt; distance; i++) {
+      arrA.unShift(&apos;0&apos;);
+    }
+  }
+  // 现在得到了两个长度一致的数组，需要做的就是把他们想通位数的值相加，大于等于10的要进一
+  // 最终得到一个和组成的数组，将数组转为字符串，去掉前面多余的0就得到了最终的和
+  for(let i = len-1; i &gt;= 0; i--) {
+    temp = Number(arrA[i]) + Number(arrB[i]) + carry;
+    if(temp &gt;= 10) {
+      carry = 1;
+      res.unshift((temp + &apos;&apos;)[1])
+    }
+    else{
+      carry = 0;
+      res.unshift(temp)
+    }
+  }
+  res = res.join(&apos;&apos;).replace(/^0/, &apos;&apos;);
+  console.log(res);
+}</code></pre><p>大数一：<input class='num1' /></br><br>大数二：<input class='num2'/></p>
+<p>请输入两个大数测试</p>
+
+<p><button class='but' onClick='add()'>确定</button><br>    <script><br>      function sumString(a, b) {<br>        //取两个数字的最大长度<br>        let maxLength = Math.max(a.length, b.length);<br>        //用0去补齐长度<br>        a = a.padStart(maxLength, 0); //"0009007199254740991"<br>        b = b.padStart(maxLength, 0); //"1234567899999999999"<br>        //定义加法过程中需要用到的变量<br>        let t = 0;<br>        let f = 0; //"进位"<br>        let sum = "";<br>        for (let i = maxLength - 1; i >= 0; i--) {<br>          t = parseInt(a[i]) + parseInt(b[i]) + f;<br>          f = Math.floor(t / 10);<br>          sum = (t % 10) + sum;<br>        }<br>        if (f == 1) {<br>          sum = "1" + sum;<br>        }<br>        return sum;<br>      }<br>      function add() {<br>        var num1 =document.querySelector(".num1");<br>        console.log(typeof(num1))<br>        console.log(num1.value)<br>        var num2 = document.querySelector(".num2");<br>        console.log(typeof(num2))<br>        var but = document.querySelector("p");<br>        but.textContent = sumString(num1.value, num2.value);</p>
+<pre><code>  }
+&lt;/script&gt;</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-this是指向哪的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1111,204 +1320,10 @@ vary: Cookie</code></pre>
 
 
   
-    <article id="post-http原理及请求组成" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/01/http%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/">http原理及请求组成</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/01/http%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:35:09.852Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="http-原理及请求组成"><a href="#http-原理及请求组成" class="headerlink" title="http 原理及请求组成"></a>http 原理及请求组成</h1><h2 id="http-原理"><a href="#http-原理" class="headerlink" title="http 原理"></a>http 原理</h2><p>HTTP 协议工作于客户端-服务端架构上。浏览器作为 HTTP 客户端通过 URL 向 HTTP 服务端即 WEB 服务器发送所有请求。</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
-<li>HTTP 是无连接的：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。</li>
-<li>HTTP 是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过 HTTP 发送。客户端以及服务器指定使用适合的 MIME-type 内容类型。</li>
-<li>HTTP 是无状态：HTTP 协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。</li>
-</ol>
-<h2 id="请求组成"><a href="#请求组成" class="headerlink" title="请求组成"></a>请求组成</h2><h3 id="起始行"><a href="#起始行" class="headerlink" title="起始行"></a>起始行</h3><p>包含三个元素：</p>
-<ul>
-<li>一个 HTTP 方法：<code>GET</code> <code>PUT</code> <code>POST</code> <code>OPTION</code> <code>HEAD</code>等；</li>
-<li>请求目标：通常是一个 URL，或者是协议、端口和域名的绝对路径；</li>
-<li>HTTP 版本</li>
-</ul>
-<h3 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h3><p>由不区分大小写的字符串，紧跟着的冒号 ‘:’ 和一个结构取决于 header 的值组成。 整个 header（包括值）由一行组成，这一行可以相当长。</p>
-<ul>
-<li>有许多请求header可用时，它们可以分为几组；</li>
-</ul>
-<h3 id="Body"><a href="#Body" class="headerlink" title="Body"></a>Body</h3><p>不是所有的请求都有一个 body：例如获取资源的请求，GET，HEAD，DELETE 和 OPTIONS，通常它们不需要 body。 有些请求将数据发送到服务器以便更新数据：常见的的情况是 POST 请求； 大致可以分为两类：</p>
-<ul>
-<li>Single-resource bodies：由一个单文件组成。该类型 body 由两个 header 定义： <code>Content-Type</code> 和 <code>Content-Length</code>.</li>
-<li>Multiple-resource bodies：由多部分 body 组成，每一部分包含不同的信息位。通常是和 <code>HTML Forms</code> 连系在一起</li>
-</ul>
-<h2 id="响应组成"><a href="#响应组成" class="headerlink" title="响应组成"></a>响应组成</h2><h3 id="状态行"><a href="#状态行" class="headerlink" title="状态行"></a>状态行</h3><p>相应的起始行。包含：</p>
-<ul>
-<li>协议版本</li>
-<li>状态码</li>
-<li>状态文本</li>
-</ul>
-<p>例：<code>HTTP/1.1 404 Not Found</code></p>
-<h3 id="Header-1"><a href="#Header-1" class="headerlink" title="Header"></a>Header</h3><p>与请求的 header 类似</p>
-<h3 id="Body-1"><a href="#Body-1" class="headerlink" title="Body"></a>Body</h3><p>与请求的 body 类似，可分为三类：</p>
-<ul>
-<li>Multiple-resource bodies，由多部分 body 组成，每一部分包含不同的信息位。通常是和 HTML Forms 连系在一起</li>
-<li>Single-resource bodies，由未知长度的单个文件组成，通过将 Transfer-Encoding 设置为 chunked 来使用 chunks 编码。</li>
-<li>Multiple-resource bodies，由多部分 body 组成，每部分包含不同的信息段。但这是比较少见的。</li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="浏览器这样的客户端发出的消息叫做-requests，被服务端响应的消息叫-responses"><a href="#浏览器这样的客户端发出的消息叫做-requests，被服务端响应的消息叫-responses" class="headerlink" title="浏览器这样的客户端发出的消息叫做 requests，被服务端响应的消息叫 responses"></a>浏览器这样的客户端发出的消息叫做 requests，被服务端响应的消息叫 responses</h3><h3 id="HTTP-Cookie"><a href="#HTTP-Cookie" class="headerlink" title="HTTP Cookie"></a>HTTP Cookie</h3><ul>
-<li>HTTP Cookie（也叫 Web Cookie 或浏览器 Cookie）是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上。通常，它用于告知服务端两个请求是否来自同一浏览器，如保持用户的登录状态。Cookie 使基于无状态的 HTTP 协议记录稳定的状态信息成为了可能。</li>
-<li>主要用于会话状态管理、个性化设置、浏览器行为跟踪</li>
-</ul>
-<h3 id="一般的HTTP回话流程"><a href="#一般的HTTP回话流程" class="headerlink" title="一般的HTTP回话流程"></a>一般的HTTP回话流程</h3><ul>
-<li>建立连接<ul>
-<li>用户输入<code>URL</code>，客户端（浏览器）发起建立连接</li>
-<li><code>URL</code>会包含域名和端口，当端口为80（默认）时，可以省略</li>
-</ul>
-</li>
-<li>发送客户端请求<ul>
-<li>建立连接后，用户代理（一般为浏览器）即可发送请求</li>
-<li>请求分为三部分（<code>起始行</code> <code>header</code> <code>body</code>）</li>
-</ul>
-</li>
-<li>服务器响应结构<ul>
-<li>响应分为三部分（<code>起始行</code> <code>header</code> <code>body</code>）</li>
-</ul>
-</li>
-</ul>
-<h3 id="常见的响应状态码"><a href="#常见的响应状态码" class="headerlink" title="常见的响应状态码"></a>常见的响应状态码</h3><ul>
-<li><code>200</code> ；OK 请求成功</li>
-<li><code>301</code> ：Moved Permanently. 请求资源的 URI 已被改变</li>
-<li><code>404</code> : Not Found. 服务器无法找到请求的资源</li>
-<li><code>500</code> ：服务器内部错误</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/01/http%E5%8E%9F%E7%90%86%E5%8F%8A%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/01/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-29T19:06:30.594Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/01/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
