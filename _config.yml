@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Hamomo blog
 subtitle: ''
 description: ''
 keywords:
@@ -111,7 +111,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: casper
+theme: yilia
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
