@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>大数相加 | Hamomo blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript 实现两个大数的相加大数超出了 Javascript 的数值范围，用字符串表示function sumString(a, b) {   a &#x3D; &amp;apos;0&amp;apos; + a;   b &#x3D; &amp;apos;0&amp;apos; + b;  &#x2F;&#x2F;加&amp;apos;0&amp;apos;首先是为了转为字符串，而且两个数相加后可能需要进位，这样保证了和的长度就是a、b中长的那个字符的长度   var">
+  <meta name="description" content="javascript 实现两个大数的相加大数超出了 Javascript 的数值范围，用字符串表示function sumString(a, b) {   &#x2F;&#x2F;取两个数字的最大长度   let maxLength &#x3D; Math.max(a.length, b.length);   &#x2F;&#x2F;用0去补齐长度   a &#x3D; a.padStart(maxLength, 0); &#x2F;&#x2F;&quot;000900719">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大数相加">
 <meta property="og:url" content="http://yoursite.com/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/index.html">
 <meta property="og:site_name" content="Hamomo blog">
-<meta property="og:description" content="javascript 实现两个大数的相加大数超出了 Javascript 的数值范围，用字符串表示function sumString(a, b) {   a &#x3D; &amp;apos;0&amp;apos; + a;   b &#x3D; &amp;apos;0&amp;apos; + b;  &#x2F;&#x2F;加&amp;apos;0&amp;apos;首先是为了转为字符串，而且两个数相加后可能需要进位，这样保证了和的长度就是a、b中长的那个字符的长度   var">
+<meta property="og:description" content="javascript 实现两个大数的相加大数超出了 Javascript 的数值范围，用字符串表示function sumString(a, b) {   &#x2F;&#x2F;取两个数字的最大长度   let maxLength &#x3D; Math.max(a.length, b.length);   &#x2F;&#x2F;用0去补齐长度   a &#x3D; a.padStart(maxLength, 0); &#x2F;&#x2F;&quot;000900719">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-02T10:28:41.032Z">
-<meta property="article:modified_time" content="2020-04-02T11:28:28.986Z">
+<meta property="article:modified_time" content="2020-04-02T13:32:06.266Z">
 <meta property="article:author" content="Hamomo">
 <meta name="twitter:card" content="summary">
   
@@ -175,46 +175,30 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="javascript-实现两个大数的相加"><a href="#javascript-实现两个大数的相加" class="headerlink" title="javascript 实现两个大数的相加"></a>javascript 实现两个大数的相加</h1><h2 id="大数超出了-Javascript-的数值范围，用字符串表示"><a href="#大数超出了-Javascript-的数值范围，用字符串表示" class="headerlink" title="大数超出了 Javascript 的数值范围，用字符串表示"></a>大数超出了 Javascript 的数值范围，用字符串表示</h2><pre><code>function sumString(a, b) {
-  a = &apos;0&apos; + a;
-  b = &apos;0&apos; + b;  //加&apos;0&apos;首先是为了转为字符串，而且两个数相加后可能需要进位，这样保证了和的长度就是a、b中长的那个字符的长度
-  var arrA = a.split(&apos;&apos;),  //将字符串转为数组
-      arrB = b.split(&apos;&apos;),
-      res = [],  //相加结果组成的数组
-      temp = &apos;&apos;,  //相同位数相加的值
-      carry = 0,  //同位数相加结果大于等于10时为1，否则为0
-      distance = a.length - b.length,  //计算两个数字字符串的长度差
-      len = distance &gt; 0 ? a.length : b.length;  //和的长度
-  // 在长度小的那个值前加distance个0，保证两个数相加之前长度是想等的
-  if(distance &gt; 0) {
-    for(let i = 0; i &lt; distance; i++) {
-      arrB.unShift(&apos;0&apos;);
-    }
-  }else{
-    for(let i = 0; i &lt; distance; i++) {
-      arrA.unShift(&apos;0&apos;);
-    }
+  //取两个数字的最大长度
+  let maxLength = Math.max(a.length, b.length);
+  //用0去补齐长度
+  a = a.padStart(maxLength, 0); //&quot;0009007199254740991&quot;
+  b = b.padStart(maxLength, 0); //&quot;1234567899999999999&quot;
+  //定义加法过程中需要用到的变量
+  let t = 0;
+  let f = 0; //&quot;进位&quot;
+  let sum = &quot;&quot;;
+  for (let i = maxLength - 1; i &gt;= 0; i--) {
+    t = parseInt(a[i]) + parseInt(b[i]) + f;
+    f = Math.floor(t / 10);
+    sum = (t % 10) + sum;
   }
-  // 现在得到了两个长度一致的数组，需要做的就是把他们想通位数的值相加，大于等于10的要进一
-  // 最终得到一个和组成的数组，将数组转为字符串，去掉前面多余的0就得到了最终的和
-  for(let i = len-1; i &gt;= 0; i--) {
-    temp = Number(arrA[i]) + Number(arrB[i]) + carry;
-    if(temp &gt;= 10) {
-      carry = 1;
-      res.unshift((temp + &apos;&apos;)[1])
-    }
-    else{
-      carry = 0;
-      res.unshift(temp)
-    }
+  if (f == 1) {
+    sum = &quot;1&quot; + sum;
   }
-  res = res.join(&apos;&apos;).replace(/^0/, &apos;&apos;);
-  console.log(res);
+  return sum;
 }</code></pre><p>大数一：<input class='num1' /></br><br>大数二：<input class='num2'/></p>
-<p>请输入两个大数测试</p>
+<p class='p'>请输入两个大数测试</p>
 
-<p><button class='but' onClick='add()'>确定</button><br>    <script><br>      function sumString(a, b) {<br>        //取两个数字的最大长度<br>        let maxLength = Math.max(a.length, b.length);<br>        //用0去补齐长度<br>        a = a.padStart(maxLength, 0); //"0009007199254740991"<br>        b = b.padStart(maxLength, 0); //"1234567899999999999"<br>        //定义加法过程中需要用到的变量<br>        let t = 0;<br>        let f = 0; //"进位"<br>        let sum = "";<br>        for (let i = maxLength - 1; i >= 0; i--) {<br>          t = parseInt(a[i]) + parseInt(b[i]) + f;<br>          f = Math.floor(t / 10);<br>          sum = (t % 10) + sum;<br>        }<br>        if (f == 1) {<br>          sum = "1" + sum;<br>        }<br>        return sum;<br>      }<br>      function add() {<br>        var num1 =document.querySelector(".num1");<br>        console.log(typeof(num1))<br>        console.log(num1.value)<br>        var num2 = document.querySelector(".num2");<br>        console.log(typeof(num2))<br>        var but = document.querySelector("p");<br>        but.textContent = sumString(num1.value, num2.value);</p>
-<pre><code>  }
-&lt;/script&gt;</code></pre>
+<p><button class='but' onClick='add()'>确定</button><br>    <script><br>      function sumString(a, b) {<br>        //取两个数字的最大长度<br>        let maxLength = Math.max(a.length, b.length);<br>        //用0去补齐长度<br>        a = a.padStart(maxLength, 0); //"0009007199254740991"<br>        b = b.padStart(maxLength, 0); //"1234567899999999999"<br>        //定义加法过程中需要用到的变量<br>        let t = 0;<br>        let f = 0; //"进位"<br>        let sum = "";<br>        for (let i = maxLength - 1; i >= 0; i--) {<br>          t = parseInt(a[i]) + parseInt(b[i]) + f;<br>          f = Math.floor(t / 10);<br>          sum = (t % 10) + sum;<br>        }<br>        if (f == 1) {<br>          sum = "1" + sum;<br>        }<br>        return sum;<br>      }<br>      function add() {<br>        var num1 =document.querySelector(".num1");<br>        var num2 = document.querySelector(".num2");<br>        var but = document.querySelector(".p");<br>        but.textContent = sumString(num1.value, num2.value);</p>
+<pre><code>}</code></pre><p></script></p>
+
       
 
       
