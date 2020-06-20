@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>大数相加 | Hamomo blog</title>
+  <title>当前任务梳理（6.20） | Hamomo blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript 实现两个大数的相加大数超出了 Javascript 的数值范围，用字符串表示function sumString(a, b) {   &#x2F;&#x2F;取两个数字的最大长度   let maxLength &#x3D; Math.max(a.length, b.length);   &#x2F;&#x2F;用0去补齐长度   a &#x3D; a.padStart(maxLength, 0); &#x2F;&#x2F;&quot;000900719">
+  <meta name="description" content="对当前任务进行梳理前面遗留的问题 哈士奇文档 webpack PWA缓存，新版本就绪提醒更新 文件全部ts化 依赖项优化 接入semantic-release自动生成changelog与发布流程等  接下来的任务 建设tf社区，tf-design 了解welab bilibili继续优化页面 bilibili个页面添加业务逻辑 video-player完善控件与倍速 学习canvas 搭建一个简单">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大数相加">
-<meta property="og:url" content="http://yoursite.com/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/index.html">
+<meta property="og:title" content="当前任务梳理（6.20）">
+<meta property="og:url" content="http://yoursite.com/2020/06/20/%E5%BD%93%E5%89%8D%E4%BB%BB%E5%8A%A1%E6%A2%B3%E7%90%86%EF%BC%886.20%EF%BC%89/index.html">
 <meta property="og:site_name" content="Hamomo blog">
-<meta property="og:description" content="javascript 实现两个大数的相加大数超出了 Javascript 的数值范围，用字符串表示function sumString(a, b) {   &#x2F;&#x2F;取两个数字的最大长度   let maxLength &#x3D; Math.max(a.length, b.length);   &#x2F;&#x2F;用0去补齐长度   a &#x3D; a.padStart(maxLength, 0); &#x2F;&#x2F;&quot;000900719">
+<meta property="og:description" content="对当前任务进行梳理前面遗留的问题 哈士奇文档 webpack PWA缓存，新版本就绪提醒更新 文件全部ts化 依赖项优化 接入semantic-release自动生成changelog与发布流程等  接下来的任务 建设tf社区，tf-design 了解welab bilibili继续优化页面 bilibili个页面添加业务逻辑 video-player完善控件与倍速 学习canvas 搭建一个简单">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-02T10:28:41.032Z">
-<meta property="article:modified_time" content="2020-05-21T11:37:12.675Z">
+<meta property="article:published_time" content="2020-06-20T08:57:45.403Z">
+<meta property="article:modified_time" content="2020-06-20T09:31:37.294Z">
 <meta property="article:author" content="Hamomo">
 <meta name="twitter:card" content="summary">
   
@@ -154,80 +154,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-大数相加" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-当前任务梳理（6.20）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      大数相加
+      当前任务梳理（6.20）
     </h1>
   
 
         
-        <a href="/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="archive-article-date">
-  	<time datetime="2020-04-02T10:28:41.032Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
+        <a href="/2020/06/20/%E5%BD%93%E5%89%8D%E4%BB%BB%E5%8A%A1%E6%A2%B3%E7%90%86%EF%BC%886.20%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-06-20T08:57:45.403Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="javascript-实现两个大数的相加"><a href="#javascript-实现两个大数的相加" class="headerlink" title="javascript 实现两个大数的相加"></a>javascript 实现两个大数的相加</h1><h2 id="大数超出了-Javascript-的数值范围，用字符串表示"><a href="#大数超出了-Javascript-的数值范围，用字符串表示" class="headerlink" title="大数超出了 Javascript 的数值范围，用字符串表示"></a>大数超出了 Javascript 的数值范围，用字符串表示</h2><pre><code>function sumString(a, b) {
-  //取两个数字的最大长度
-  let maxLength = Math.max(a.length, b.length);
-  //用0去补齐长度
-  a = a.padStart(maxLength, 0); //&quot;0009007199254740991&quot;
-  b = b.padStart(maxLength, 0); //&quot;1234567899999999999&quot;
-  //定义加法过程中需要用到的变量
-  let t = 0;
-  let f = 0; //&quot;进位&quot;
-  let sum = &quot;&quot;;
-  for (let i = maxLength - 1; i &gt;= 0; i--) {
-    t = parseInt(a[i]) + parseInt(b[i]) + f;
-    f = Math.floor(t / 10);
-    sum = (t % 10) + sum;
-  }
-  if (f == 1) {
-    sum = &quot;1&quot; + sum;
-  }
-  return sum;
-}</code></pre><p>大数一：<input class='num1' /></br></p>
-<p>大数二：<input class='num2'/></p>
-<p class='p'>请输入两个大数测试</p>
-
-<p><button class='but' onClick='add()'>确定</button></p>
-<script>
-function sumString(a, b) {
-//取两个数字的最大长度
-let maxLength = Math.max(a.length, b.length);
-//用 0 去补齐长度
-a = a.padStart(maxLength, 0); //"0009007199254740991"
-b = b.padStart(maxLength, 0); //"1234567899999999999"
-//定义加法过程中需要用到的变量
-let t = 0;
-let f = 0; //"进位"
-let sum = "";
-for (let i = maxLength - 1; i >= 0; i--) {
-t = parseInt(a[i]) + parseInt(b[i]) + f;
-f = Math.floor(t / 10);
-sum = (t % 10) + sum;
-}
-if (f == 1) {
-sum = "1" + sum;
-}
-return sum;
-}
-function add() {
-var num1 =document.querySelector(".num1");
-var num2 = document.querySelector(".num2");
-var but = document.querySelector(".p");
-but.textContent = sumString(num1.value, num2.value);
-
-      }
-
-</script>
+        <h1 id="对当前任务进行梳理"><a href="#对当前任务进行梳理" class="headerlink" title="对当前任务进行梳理"></a>对当前任务进行梳理</h1><h2 id="前面遗留的问题"><a href="#前面遗留的问题" class="headerlink" title="前面遗留的问题"></a>前面遗留的问题</h2><ul>
+<li>哈士奇文档</li>
+<li>webpack</li>
+<li>PWA缓存，新版本就绪提醒更新</li>
+<li>文件全部ts化</li>
+<li>依赖项优化</li>
+<li>接入semantic-release自动生成changelog与发布流程等</li>
+</ul>
+<h2 id="接下来的任务"><a href="#接下来的任务" class="headerlink" title="接下来的任务"></a>接下来的任务</h2><ul>
+<li>建设tf社区，tf-design</li>
+<li>了解welab</li>
+<li>bilibili继续优化页面</li>
+<li>bilibili个页面添加业务逻辑</li>
+<li>video-player完善控件与倍速</li>
+<li>学习canvas</li>
+<li>搭建一个简单的网站（你画我猜）</li>
+<li>完成类SWR库</li>
+<li>了解前端其他请求方式</li>
+<li>学习ngnix</li>
+<li>尝试添加多台服务器，利用ngnix进行负载均衡</li>
+</ul>
 
       
 
@@ -307,7 +274,7 @@ but.textContent = sumString(num1.value, num2.value);
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/20/%E5%BD%93%E5%89%8D%E4%BB%BB%E5%8A%A1%E6%A2%B3%E7%90%86%EF%BC%886.20%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +288,9 @@ but.textContent = sumString(num1.value, num2.value);
   
 <nav id="article-nav">
   
-    <a href="/2020/04/02/da/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          da
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">this是指向哪的</div>
+    <a href="/2020/05/21/React%E7%9A%84%E4%BC%98%E5%8A%BF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React的优势</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>大数相加 | Hamomo blog</title>
+  <title>轮播图 | Hamomo blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript 实现两个大数的相加大数超出了 Javascript 的数值范围，用字符串表示function sumString(a, b) {   &#x2F;&#x2F;取两个数字的最大长度   let maxLength &#x3D; Math.max(a.length, b.length);   &#x2F;&#x2F;用0去补齐长度   a &#x3D; a.padStart(maxLength, 0); &#x2F;&#x2F;&quot;000900719">
+  <meta name="description" content="轮播图            body {         padding: 20px;       }       #container {         position: relative;         overflow: hidden;         width: 600px;         height: 400px;       }">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大数相加">
-<meta property="og:url" content="http://yoursite.com/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/index.html">
+<meta property="og:title" content="轮播图">
+<meta property="og:url" content="http://yoursite.com/2020/04/04/%E8%BD%AE%E6%92%AD%E5%9B%BE/index.html">
 <meta property="og:site_name" content="Hamomo blog">
-<meta property="og:description" content="javascript 实现两个大数的相加大数超出了 Javascript 的数值范围，用字符串表示function sumString(a, b) {   &#x2F;&#x2F;取两个数字的最大长度   let maxLength &#x3D; Math.max(a.length, b.length);   &#x2F;&#x2F;用0去补齐长度   a &#x3D; a.padStart(maxLength, 0); &#x2F;&#x2F;&quot;000900719">
+<meta property="og:description" content="轮播图            body {         padding: 20px;       }       #container {         position: relative;         overflow: hidden;         width: 600px;         height: 400px;       }">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-02T10:28:41.032Z">
-<meta property="article:modified_time" content="2020-05-21T11:37:12.675Z">
+<meta property="article:published_time" content="2020-04-03T17:42:39.618Z">
+<meta property="article:modified_time" content="2020-04-07T12:16:35.515Z">
 <meta property="article:author" content="Hamomo">
 <meta name="twitter:card" content="summary">
   
@@ -154,80 +154,253 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-大数相加" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-轮播图" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      大数相加
+      轮播图
     </h1>
   
 
         
-        <a href="/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="archive-article-date">
-  	<time datetime="2020-04-02T10:28:41.032Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
+        <a href="/2020/04/04/%E8%BD%AE%E6%92%AD%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2020-04-03T17:42:39.618Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="javascript-实现两个大数的相加"><a href="#javascript-实现两个大数的相加" class="headerlink" title="javascript 实现两个大数的相加"></a>javascript 实现两个大数的相加</h1><h2 id="大数超出了-Javascript-的数值范围，用字符串表示"><a href="#大数超出了-Javascript-的数值范围，用字符串表示" class="headerlink" title="大数超出了 Javascript 的数值范围，用字符串表示"></a>大数超出了 Javascript 的数值范围，用字符串表示</h2><pre><code>function sumString(a, b) {
-  //取两个数字的最大长度
-  let maxLength = Math.max(a.length, b.length);
-  //用0去补齐长度
-  a = a.padStart(maxLength, 0); //&quot;0009007199254740991&quot;
-  b = b.padStart(maxLength, 0); //&quot;1234567899999999999&quot;
-  //定义加法过程中需要用到的变量
-  let t = 0;
-  let f = 0; //&quot;进位&quot;
-  let sum = &quot;&quot;;
-  for (let i = maxLength - 1; i &gt;= 0; i--) {
-    t = parseInt(a[i]) + parseInt(b[i]) + f;
-    f = Math.floor(t / 10);
-    sum = (t % 10) + sum;
-  }
-  if (f == 1) {
-    sum = &quot;1&quot; + sum;
-  }
-  return sum;
-}</code></pre><p>大数一：<input class='num1' /></br></p>
-<p>大数二：<input class='num2'/></p>
-<p class='p'>请输入两个大数测试</p>
-
-<p><button class='but' onClick='add()'>确定</button></p>
-<script>
-function sumString(a, b) {
-//取两个数字的最大长度
-let maxLength = Math.max(a.length, b.length);
-//用 0 去补齐长度
-a = a.padStart(maxLength, 0); //"0009007199254740991"
-b = b.padStart(maxLength, 0); //"1234567899999999999"
-//定义加法过程中需要用到的变量
-let t = 0;
-let f = 0; //"进位"
-let sum = "";
-for (let i = maxLength - 1; i >= 0; i--) {
-t = parseInt(a[i]) + parseInt(b[i]) + f;
-f = Math.floor(t / 10);
-sum = (t % 10) + sum;
-}
-if (f == 1) {
-sum = "1" + sum;
-}
-return sum;
-}
-function add() {
-var num1 =document.querySelector(".num1");
-var num2 = document.querySelector(".num2");
-var but = document.querySelector(".p");
-but.textContent = sumString(num1.value, num2.value);
-
+        <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>轮播图</title>
+    <style>
+      body {
+        padding: 20px;
       }
-
-</script>
+      #container {
+        position: relative;
+        overflow: hidden;
+        width: 600px;
+        height: 400px;
+      }
+      #list {
+        position: absolute;
+        z-index: 1;
+        width: 4200px;
+        height: 400px;
+      }
+      #list div {
+        float: left;
+        width: 600px;
+        height: 400px;
+      }
+      #buttons {
+        position: absolute;
+        z-index: 2;
+        bottom: 20px;
+        left: 250px;
+        width: 100px;
+        height: 10px;
+      }
+      #buttons span {
+        float: left;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+        cursor: pointer;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        background: #333;
+      }
+      #buttons .on {
+        background: orangered;
+      }
+      .arrow {
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 39px;
+        position: absolute;
+        z-index: 2;
+        top: 180px;
+        display: none;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+        background-color: RGBA(0, 0, 0, 0.3);
+      }
+      .arrow:hover {
+        background-color: RGBA(0, 0, 0, 0.7);
+      }
+      #container:hover .arrow {
+        display: block;
+      }
+      #prev {
+        left: 20px;
+      }
+      #next {
+        right: 20px;
+      }
+      .item1 {
+        background-color: aqua;
+      }
+      .item2 {
+        background-color: rgb(228, 168, 113);
+      }
+      .item3 {
+        background-color: rgb(140, 109, 212);
+      }
+      .item4 {
+        background-color: rgb(147, 233, 166);
+      }
+      .item5 {
+        background-color: rgb(234, 243, 243);
+      }
+      .item6 {
+        background-color: rgb(187, 54, 116);
+      }
+      .item7 {
+        background-color: rgb(228, 168, 113);
+      }
+    </style>
+  <meta name="generator" content="Hexo 4.2.0"></head>
+  <body>
+    <h1>用HTML写的轮播图</h1>
+    <div id="container">
+      <div id="list" style="left:-600px;">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+        <div class="item4"></div>
+        <div class="item5"></div>
+        <div class="item6"></div>
+        <div class="item7"></div>
+      </div>
+      <div id="buttons">
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+        <span index="5"></span>
+      </div>
+      <a id="prev" class="arrow">&lt;</a>
+      <a href="javascript:;" id="next" class="arrow">&gt;</a>
+    </div>
+    <script>
+      window.onload = function() {
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var list = document.getElementById("list");
+        var buttons = document
+          .getElementById("buttons")
+          .getElementsByTagName("span");
+        var container = document.getElementById("container");
+        var index = 1;
+        var timer;
+        var animated = false;
+        function shownButton() {
+          for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].className == "on") {
+              buttons[i].className = "";
+              /* prev和next每click一次，
+                        就会清除一次前一个class为on的span元素，
+                        所以没有必要再去循环下面的span*/
+              break;
+            }
+            //  或者直接遍历清除  buttons[i].className=""；
+          }
+          buttons[index - 1].className = "on";
+        }
+        function animate(offset) {
+          var time = 300;
+          var inteval = 10;
+          var speed = offset / (time / inteval);
+          animated = true; //更改全局变量，防止跳图
+          var newLeft = parseInt(list.style.left) + offset;
+          function go() {
+            if (
+              (speed > 0 && parseInt(list.style.left) < newLeft) ||
+              (speed < 0 && parseInt(list.style.left) > newLeft)
+            ) {
+              list.style.left = parseInt(list.style.left) + speed + "px";
+              setTimeout(go, inteval);
+            } else {
+              animated = false; //全局变量
+              list.style.left = newLeft + "px";
+              if (newLeft > -600) {
+                list.style.left = -3000 + "px";
+              }
+              if (newLeft < -3000) {
+                list.style.left = -600 + "px";
+              }
+            }
+          }
+          go();
+        }
+        prev.onclick = function() {
+          /*添加一个if判断index为1时，如果继续往前滚的话就让index返回第五个span
+                但是当快速点击arrow时会出现一种span点亮延迟的情况。可以尝试把判断index是否大于1或小于5的情况放进
+                判断是否animated的if语句中，先判断能不能点击，再点亮。
+                */
+          if (!animated) {
+            if (index == 1) {
+              index = 5;
+            } else {
+              index -= 1;
+            }
+            shownButton();
+            animate(600);
+          }
+        };
+        next.onclick = function() {
+          if (!animated) {
+            if (index == 5) {
+              index = 1;
+            } else {
+              index += 1;
+            }
+            shownButton();
+            animate(-600);
+          }
+        };
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].onclick = function() {
+            //无关紧要
+            if (this.className == "on") {
+              return;
+            }
+            var myIndex = parseInt(this.getAttribute("index"));
+            var offset = -600 * (myIndex - index);
+            if (!animated) {
+              animate(offset);
+            }
+            index = myIndex;
+            shownButton();
+          };
+        }
+        function play() {
+          timer = setInterval(function() {
+            next.onclick();
+          }, 2000);
+        }
+        function stop() {
+          clearInterval(timer);
+        }
+        play();
+        container.onmouseover = stop;
+        container.onmouseout = play;
+      };
+    </script>
+  </body>
+</html>
 
       
 
@@ -307,7 +480,7 @@ but.textContent = sumString(num1.value, num2.value);
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/04/%E8%BD%AE%E6%92%AD%E5%9B%BE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +494,18 @@ but.textContent = sumString(num1.value, num2.value);
   
 <nav id="article-nav">
   
-    <a href="/2020/04/02/da/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/21/React%E7%9A%84%E4%BC%98%E5%8A%BF/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          da
+          React的优势
         
       </div>
     </a>
   
   
-    <a href="/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">this是指向哪的</div>
+    <a href="/2020/04/02/da/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">da</div>
       <i class="icon-circle-right"></i>
     </a>
   
