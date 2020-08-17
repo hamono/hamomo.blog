@@ -64,6 +64,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-前端开发中的“标准组件”" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/15/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E2%80%9C%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6%E2%80%9D/" class="article-date">
+  <time datetime="2020-08-15T12:46:01.224Z" itemprop="datePublished">2020-08-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/15/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E2%80%9C%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6%E2%80%9D/">前端开发中的“标准组件”</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前端“标准组件”"><a href="#前端“标准组件”" class="headerlink" title="前端“标准组件”"></a>前端“标准组件”</h1><p>在长期的代码开发中，组件的标准化尤为重要，那么何为“标准组件”呢？</p>
+<h2 id="通用性"><a href="#通用性" class="headerlink" title="通用性"></a>通用性</h2><p>我们可以设想这样一个需求：我们需要一个能发红光的灯泡，然后我们就编写了一个发红光的灯泡；又来一个新的需求：需要一个能发绿光的灯泡。那么我们就要想，同样是灯泡，为什么不能复用呢？因为功能不一样，前面的能发红光，我们需要发绿光的。那么我们就可以将前面的代码拷贝一份，将其中的发红光的功能改成发绿光，需求似乎很快完成(🐶狗头保命)。这就是我们要说的通用性，很显然这样的组件并不满足通用性。</p>
+<p>将我们面临的问题抽象成日常生活中的对象，往往是易于理解的，一个通用组件要实现的是某一类功能，就像刚才的灯泡，我们不仅需要他能发不同颜色的光，而且光的强度也要可以改变。</p>
+<p>从编码角度来说，再编写组件时，通用性就表现在接口的丰富度上。</p>
+<h2 id="健壮性"><a href="#健壮性" class="headerlink" title="健壮性"></a>健壮性</h2><p>这是任何软件系统都必须尽力满足的要求，具体而言就表现在每个组件的健壮性。</p>
+<p>这里并不提供构建“标准组件”的方法，只是提供了一个思路。</p>
+<p>总的来说，组件内部不应该产生严重的副作用。对于数据而言，组件内部应该只是消费数据的，不应该生产数据，当然这只是对于具体的功能组件而言的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/15/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E2%80%9C%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6%E2%80%9D/" data-id="ckdy9ahfp000934ugbuma56sg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-当前任务梳理（6.20）" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/20/%E5%BD%93%E5%89%8D%E4%BB%BB%E5%8A%A1%E6%A2%B3%E7%90%86%EF%BC%886.20%EF%BC%89/" class="article-date">
@@ -111,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/20/%E5%BD%93%E5%89%8D%E4%BB%BB%E5%8A%A1%E6%A2%B3%E7%90%86%EF%BC%886.20%EF%BC%89/" data-id="ckbngd1wa000a14ugfgx175yr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/06/20/%E5%BD%93%E5%89%8D%E4%BB%BB%E5%8A%A1%E6%A2%B3%E7%90%86%EF%BC%886.20%EF%BC%89/" data-id="ckdy9ahgm000g34ugfvjp7jbv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/21/React%E7%9A%84%E4%BC%98%E5%8A%BF/" data-id="ckbngd1vx000114ug0por4gc6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/21/React%E7%9A%84%E4%BC%98%E5%8A%BF/" data-id="ckdy9ahdp000034ug0s5u45kx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -418,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/04/%E8%BD%AE%E6%92%AD%E5%9B%BE/" data-id="ckbngd1wc000d14ugbmzx982w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/04/%E8%BD%AE%E6%92%AD%E5%9B%BE/" data-id="ckdy9ahgl000f34ug9ppk0nhp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -499,7 +542,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/02/da/" data-id="ckbngd1w4000314ug8rbv41sb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/02/da/" data-id="ckdy9ahf7000734uggr4r2rd8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -589,7 +632,7 @@ but.textContent = sumString(num1.value, num2.value);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/" data-id="ckbngd1we000e14ug55buhulu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/" data-id="ckdy9ahgi000e34ugaq5zc568" class="article-share-link">Share</a>
       
       
     </footer>
@@ -678,7 +721,7 @@ o3.foo();          // &quot;bar3&quot; – 隐式绑定</code></pre><p>调用函
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/" data-id="ckbngd1wa000914ug2674036k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/" data-id="ckdy9ahg3000c34ug2y979a7z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -855,7 +898,7 @@ o3.foo();          // &quot;bar3&quot; – 隐式绑定</code></pre><p>调用函
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/27/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/" data-id="ckbngd1wo000f14ughk434s1v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/27/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/" data-id="ckdy9ahg6000d34ug9f2pcjui" class="article-share-link">Share</a>
       
       
     </footer>
@@ -903,7 +946,7 @@ o3.foo();          // &quot;bar3&quot; – 隐式绑定</code></pre><p>调用函
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/" data-id="ckbngd1wc000c14ug7k2yf8s1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/" data-id="ckdy9ahfw000a34ugg5z7cu2a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -966,61 +1009,7 @@ o3.foo();          // &quot;bar3&quot; – 隐式绑定</code></pre><p>调用函
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/05/task/" data-id="ckbngd1w7000714uga5k3ewnu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-text" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/03/05/text/" class="article-date">
-  <time datetime="2020-03-05T07:42:34.827Z" itemprop="datePublished">2020-03-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/05/text/">text</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-<meta name="generator" content="Hexo 4.2.0"></head>
-<body>
-  <p>请输入半径</p>
-  <input type="text" onchange="input()">
-  <button>确认</button>
-</body>
-<script>
-  function input(){
-    const inputs=document.querySelector('input');
-    const p=document.querySelector('p');
-    p.textContent=inputs.value*inputs.value*3.14;
-  }
-</script>
-</html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/05/text/" data-id="ckbngd1wb000b14ugbwtue43d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/05/task/" data-id="ckdy9ahf0000534ugh0kx9m4i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1053,7 +1042,7 @@ o3.foo();          // &quot;bar3&quot; – 隐式绑定</code></pre><p>调用函
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li></ul>
     </div>
   </div>
 
@@ -1064,6 +1053,10 @@ o3.foo();          // &quot;bar3&quot; – 隐式绑定</code></pre><p>调用函
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/08/15/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E2%80%9C%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6%E2%80%9D/">前端开发中的“标准组件”</a>
+          </li>
         
           <li>
             <a href="/2020/06/20/%E5%BD%93%E5%89%8D%E4%BB%BB%E5%8A%A1%E6%A2%B3%E7%90%86%EF%BC%886.20%EF%BC%89/">当前任务梳理（6.20）</a>
@@ -1079,10 +1072,6 @@ o3.foo();          // &quot;bar3&quot; – 隐式绑定</code></pre><p>调用函
         
           <li>
             <a href="/2020/04/02/da/">da</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/">大数相加</a>
           </li>
         
       </ul>
