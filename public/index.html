@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hamomo blog</title><meta name="description"><meta name="author" content="Hamomo"><meta name="copyright" content="Hamomo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Hamomo blog"><meta property="og:url" content="http://yoursite.com/"><meta property="og:site_name" content="Hamomo blog"><meta property="og:description"><meta property="og:image" content="http://yoursite.com/null"><meta property="article:published_time" content="2020-09-10T09:00:56.011Z"><meta property="article:modified_time" content="2020-09-10T09:00:56.011Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.1.1',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime: '',
+  date_suffix: {"one_hour":"Just","hours":"hours ago","day":"days ago"},
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+    },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-09-10 17:00:56'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><meta name="generator" content="Hexo 5.1.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">12</div></a></div></div></div><hr/></div></div><div id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hamomo blog</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Hamomo blog</h1><div id="site_subtitle"><span id="subtitle"></span></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/08/15/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E2%80%9C%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6%E2%80%9D/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-08-15T12:46:01.224Z" title="Created 2020-08-15 20:46:01">2020-08-15</time></span></div><div class="content">前端“标准组件”在长期的代码开发中，组件的标准化尤为重要，那么何为“标准组件”呢？
+通用性我们可以设想这样一个需求：我们需要一个能发红光的灯泡，然后我们就编写了一个发红光的灯泡；又来一个新的需求：需要一个能发绿光的灯泡。那么我们就要想，同样是灯泡，为什么不能复用呢？因为功能不一样，前面的能发红光，我们需要发绿光的。那么我们就可以将前面的代码拷贝一份，将其中的发红光的功能改成发绿光，需求似乎很快完成(🐶狗头保命)。这就是我们要说的通用性，很显然这样的组件并不满足通用性。
+将我们面临的问题抽象成日常生活中的对象，往往是易于理解的，一个通用组件要实现的是某一类功能，就像刚才的灯泡，我们不仅需要他能发不同颜色的光，而且光的强度也要可以改变。
+从编码角度来说，再编写组件时，通用性就表现在接口的丰富度上。
+健壮性这是任何软件系统都必须尽力满足的要求，具体而言就表现在每个组件的健壮性。
+这里并不提供构建“标准组件”的方法，只是提供了一个思路。
+总的来说，组件内部不应该产生严重的副作用。对于数据而言，组件内部应该只是消费数据的，不应该生产数据，当然这只是对于具体的功能组件而言的。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/06/20/%E5%BD%93%E5%89%8D%E4%BB%BB%E5%8A%A1%E6%A2%B3%E7%90%86%EF%BC%886.20%EF%BC%89/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-06-20T08:57:45.403Z" title="Created 2020-06-20 16:57:45">2020-06-20</time></span></div><div class="content">对当前任务进行梳理前面遗留的问题
+哈士奇文档
+webpack
+PWA缓存，新版本就绪提醒更新
+文件全部ts化
+依赖项优化
+接入semantic-release自动生成changelog与发布流程等
+
+接下来的任务
+建设tf社区，tf-design
+了解welab
+bilibili继续优化页面
+bilibili个页面添加业务逻辑
+video-player完善控件与倍速
+学习canvas
+搭建一个简单的网站（你画我猜）
+完成类SWR库
+了解前端其他请求方式
+学习ngnix
+尝试添加多台服务器，利用ngnix进行负载均衡
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/05/21/React%E7%9A%84%E4%BC%98%E5%8A%BF/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-21T11:38:09.309Z" title="Created 2020-05-21 19:38:09">2020-05-21</time></span></div><div class="content">React  的优势与不足优势virtual dom虚拟DOM概念react引入了虚拟DOM的概念，他并不直接对浏览器的DOM进行操作，这样做的优势在于减少了对于DOM的操作，提高了浏览器的渲染性能。
+对于小型项目而言，表面上看不出react虚拟DOM的优势，但是对于复杂的大型项目优势就很明显。由此便出现了数据驱动UI。
+数据驱动UI的模式对于习惯了经典的操作浏览器DOM的前端人员来说，数据驱动UI可能是难以理解的，对于习惯了React编程的人员来说，渲染不同的UI界面只需要考虑给React传入不同的数据，这相对于最直接操作DOM来说可能是间接的，但是对于虚拟DOM来说，这个是非常必要的，但是事实上并不是所有的DOM操作都可以用虚拟DOM来解决，因此直接操作DOM是必不可少的。
+数据驱动与DOM操作并存的模式React在提出虚拟DOM后，针对操作数据无法解决的问题，依然支持直接的操作DOM，这对于React的使用者而言，如何减少直接操作DOM，是一个需要考虑的问题。
+对于React而言，不同的数据是渲染不同UI的基础。
+自上而下的单向数据流React采用的是单项数据流模式，这样做的好处 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/04/02/da/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-04-02T10:54:53.561Z" title="Created 2020-04-02 18:54:53">2020-04-02</time></span></div><div class="content">
+
+  
+    
+    
+    Document
+  
+  
+    大数一： 大数二：
+    请输入两个大数测试
+    确定
+    
+      function sumString(a, b) {
+        //取两个数字的最大长度
+        let maxLength = Math.max(a.length, b.length);
+        //用0去补齐长度
+        a = a.padStart(maxLength, 0); //"0009007199254740991"
+        b = b.padStart(maxLength, 0); //"1234567899999999999"
+        //定义加法过程中需要用到的变量
+        let t = 0;
+        let f = 0; //"进位"
+        let sum = "";
+        for (let i = maxLength - 1; i >= 0; i--) {
+          t = parseInt(a[i]) + pa ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-04-02T10:28:41.032Z" title="Created 2020-04-02 18:28:41">2020-04-02</time></span></div><div class="content">javascript 实现两个大数的相加大数超出了 Javascript 的数值范围，用字符串表示function sumString(a, b) &#123;
+  //取两个数字的最大长度
+  let maxLength = Math.max(a.length, b.length);
+  //用0去补齐长度
+  a = a.padStart(maxLength, 0); //&quot;0009007199254740991&quot;
+  b = b.padStart(maxLength, 0); //&quot;1234567899999999999&quot;
+  //定义加法过程中需要用到的变量
+  let t = 0;
+  let f = 0; //&quot;进位&quot;
+  let sum = &quot;&quot;;
+  for (let i = maxLength - 1; i &gt;= 0; i--) &#123;
+    t = parseInt(a[i]) + parseInt(b[i]) + f;
+    f = Math.floor(t / 10) ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/03/28/this%E6%98%AF%E6%8C%87%E5%90%91%E5%93%AA%E7%9A%84/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-03-28T08:44:15.825Z" title="Created 2020-03-28 16:44:15">2020-03-28</time></span></div><div class="content">this 的指向总的来说，指向离他最近的function关键字所属的对象。
+一般绑定this的方法有以下几种：
+
+箭头函数
+关键字new
+显式绑定
+隐式绑定
+默认绑定
+
+以上按照优先级从高到低排列。
+箭头函数function Person()&#123;
+  this.age = 0;
+  setTimeout(function () &#123;
+    console.log(this.age);     // 输出undefined
+  &#125;, 1000);
+&#125;
+var p = new Person();
+
+function Person()&#123;
+  this.age = 10;
+  setTimeout(()=&gt; &#123;
+    console.log(this.age);     // 输出10
+  &#125;, 1000);
+&#125;
+var p = new Person();在上述的箭头函数的例子中，setTimeout内部的函数是被global调用的，而global没有阿哥这个属性，输出undefined。
+第二个使用箭头函数 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/03/27/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-03-27T12:59:15.473Z" title="Created 2020-03-27 20:59:15">2020-03-27</time></span></div><div class="content">从输入 URL 到页面加载发生了什么URL首先，在回答在个问题之前，我们需要搞清楚URL是什么。
+常见的 URL 会包含：
+
+协议名常见的协议是 HTTP 协议，除此之外还包括
+HTTPS
+FTP
+FILE 等
+
+
+域名
+端口号端口号一般都是默认隐藏的，HTTP 协议默认端口是 80，HTTPS 协议默认端口是 443.
+path一般取决于服务器的路由结构
+问号参数和 hash
+问号传参是客户端把信息传递给服务器的一种方式(也有可能是跳转到某一个页面，把参数值传递给页面用来标识的)
+hash 主要用于页面中锚点定位和 hash 路由切换
+
+
+
+从输入 URL 到页面加载发生的事这个过程主要可以分为以下几个过程：
+
+DNS 解析
+建立 TCP 连接
+客户端发送 HTTP 协议
+服务器返回 response
+浏览器渲染页面
+结束连接
+
+DNS 解析DNS 解析是找到对应服务器的 IP 地址
+
+查找方法有：迭代和递归两种
+查询的位置有
+浏览器缓存
+操作系统缓存
+本地域名服务器
+顶级域名服务器
+根域名服务器直到获得准确的 IP 地址
+
+
+
+建立 TCP 连接在获得 IP 地址后，便开始建立一次 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/03/15/webpack%E4%B8%AD%E7%9A%84loader%E5%92%8Cplugin/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-03-15T00:40:33.485Z" title="Created 2020-03-15 08:40:33">2020-03-15</time></span></div><div class="content">loaderwebpack 默认只识别 js 结尾的文件，当遇到其他格式后，webpack 并不知道如何去处理。此时，我们需要定义一种规则，告诉 webpack，当遇到其他类型的问件时，去求助于相应的 loader。
+
+识别出应该被对应的 loader 进行转换的文件。（test 属性）
+转换这些文件，使其能够被添加到依赖图中。（use 属性）
+
+用法
+test：匹配处理文件的拓展名的表达式，必须
+user：使用的 loader 模块名称，必须
+include/exclude：手动添加必须处理的文件（夹）或屏蔽不需要处理的文件，可选
+query：为 loader 提供额外的设置选项，可选
+
+pluginloader 被用于转换某些类型的模块，而插件则可以用于执行广泛的任务。想要使用一个插件，你只需要 require()它，然后将它添加到 plugins 数组中。多数插件可以通过选项自定义。你也可以在一个配置中因为不同目的而多次使用同一个插件，这时需要通过使用 new 操作符来创建它的一个实例。
+用法plugins:[执行的插件]</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/03/03/React%E5%BC%82%E6%AD%A5/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-03-02T16:45:30.081Z" title="Created 2020-03-03 00:45:30">2020-03-03</time></span></div><div class="content">setState的异步调用setState是异步的，在class式的组件中，this.state表示当前渲染的值，在hook中state是同样的效果。
+所以this.setState或者setState到底什么时候才会重新渲染呢？
+setState 函数用于更新 state。它接收一个新的 state 值并将组件的一次重新渲染加入队列。在后续的重新渲染中，useState 返回的第一个值将始终是更新后最新的 state。（这段话来自hook文档）
+那么，“加入队列”怎么理解，“后续的重新渲染”又是什么时候呢？
+先看一段代码：
+const [count, setCount] = React.useState(0);
+return &lt;div&gt;
+  &lt;p&gt;You clicked &#123;count&#125; times&lt;/p&gt;
+  &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;click&lt;/button&gt;
+  &lt;/div&gt;显而易见，打印的count ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2020/03/02/fetch%E7%9B%B8%E5%85%B3api%E5%8F%8A%E5%BC%82%E6%AD%A5/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-03-01T16:52:28.312Z" title="Created 2020-03-02 00:52:28">2020-03-02</time></span></div><div class="content">fetch 相关 APIfetch()fetch 请求
+fetch(&apos;http://example.com/movies.json&apos;)
+.then(function(response) &#123;
+  return response.json();
+&#125;)
+.then(function(myJson) &#123;
+  console.log(myJson);
+&#125;);他可以接受两个参数，可以为一个请求的基本信息，如下：
+function postData(url, data) &#123;
+  return fetch(url, &#123;
+    body: JSON.stringify(data), // must match &apos;Content-Type&apos; header
+    cache: &apos;no-cache&apos;, // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: &apos;same-origin& ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Hamomo</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="sticky_layout"><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2020/08/15/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E2%80%9C%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6%E2%80%9D/" title="No title">No title</a><time datetime="2020-08-15T12:46:01.224Z" title="Created 2020-08-15 20:46:01">2020-08-15</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2020/06/20/%E5%BD%93%E5%89%8D%E4%BB%BB%E5%8A%A1%E6%A2%B3%E7%90%86%EF%BC%886.20%EF%BC%89/" title="No title">No title</a><time datetime="2020-06-20T08:57:45.403Z" title="Created 2020-06-20 16:57:45">2020-06-20</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2020/05/21/React%E7%9A%84%E4%BC%98%E5%8A%BF/" title="No title">No title</a><time datetime="2020-05-21T11:38:09.309Z" title="Created 2020-05-21 19:38:09">2020-05-21</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2020/04/02/da/" title="No title">No title</a><time datetime="2020-04-02T10:54:53.561Z" title="Created 2020-04-02 18:54:53">2020-04-02</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2020/04/02/%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="No title">No title</a><time datetime="2020-04-02T10:28:41.032Z" title="Created 2020-04-02 18:28:41">2020-04-02</time></div></div></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">August 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">June 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">May 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">April 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">March 2020</span><span class="card-archive-list-count">7</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">12</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-09-10T09:00:55.996Z"></div></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Hamomo</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
