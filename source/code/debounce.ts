@@ -1,4 +1,4 @@
-function debounce(fn: () => void, time: number) {
+function debounce(fn: () => void,pars:[], time: number) {
   let timer = null;
 
   return function () {
@@ -7,7 +7,7 @@ function debounce(fn: () => void, time: number) {
       timer = null;
     }
     timer = setTimeout(() => {
-      fn();
+      fn.apply(this,pars);
     }, time);
   };
 }
@@ -16,4 +16,4 @@ function fn(){
   console.log('防抖函数')
 }
 
-setInterval(debounce(fn,3000),5000)
+setInterval(debounce(fn,[],3000),5000)
