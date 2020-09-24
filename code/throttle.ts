@@ -1,17 +1,17 @@
-function throttle(fn: () => void, time: number) {
+function throttle(fn: (m:number) => void,pars:any, time: number) {
   let lastTime: number = null;
-
   return function () {
-    let nowTime = (new Date() as unknown) as number;
+    let nowTime = Date.now();
+    
     if (nowTime - lastTime > time || lastTime === null) {
-      fn();
+      fn.apply(this,pars);
       lastTime = nowTime;
     }
   };
 }
 
-export function fn() {
-  console.log("节流函数");
+export function fn(m:number) {
+  console.log("节流函数"+m);
 }
 
-setInterval(throttle(fn, 3000), 10);
+setInterval(throttle(fn,[123], 3000), 1000);
