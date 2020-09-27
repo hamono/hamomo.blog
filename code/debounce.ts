@@ -1,19 +1,27 @@
-function debounce(fn: () => void,pars:[], time: number) {
+export default function useDebounce<T = any>(
+  fn: (m?: T) => void,
+  pars: any[],
+  time: number
+) {
   let timer = null;
-
+  const context = this;
   return function () {
     if (timer) {
       clearTimeout(timer);
       timer = null;
     }
     timer = setTimeout(() => {
-      fn.apply(this,pars);
+      fn.apply(context, pars);
     }, time);
   };
 }
 
-function fn(){
-  console.log('防抖函数')
+interface Test {
+  asd: number;
 }
 
-setInterval(debounce(fn,[],3000),5000)
+function a({ asd }: Test) {
+  console.log(asd);
+}
+
+setInterval(useDebounce<Test>(a, [123], 2000), 3000);
